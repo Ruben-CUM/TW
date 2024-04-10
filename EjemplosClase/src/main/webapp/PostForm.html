@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<title>Un ejemplo de formulario usando POST</title>
+</head>
+<body>
+	<h1 style="align: center">Un ejemplo de formulario usando POST</h1>
+	<form action="ShowParameters" method="post">
+		<fieldset>
+			<legend>Datos Personales</legend>
+			<label for="lorden">Numero de orden:</label> 
+			<input type="text" name="idPedido" id="idPedido" /> 
+			<label for="cantidad">Cantidad:</label>
+			<input type="text" name="Cantidad" id="Cantidad" /> <br /> 
+			<label>Precio por unidad:</label> 
+			<input type="text" name="Precio" value="0" id="Precio" /><br />
+			<label>Nombre:</label> 
+			<input type="text" name="Nombre" /> <br /> 
+			<label>Apellidos:</label>
+			<input type="text" name="Apellidos" /> <br /> 
+			<label>Direccion de envio:</label>
+			<textarea name="Direccion de envio" rows=3 cols=40/>
+		</fieldset>
+		<fieldset>
+			<legend>Pago</legend>
+			<br /> <label>Tarjeta de Credito:</label> 
+			<select id="tarjeta" name="tarjeta" multiple="multiple">
+				<option value="1">Visa</option>
+				<option value="2">Mastercard</option>
+				<option value="3">American Express</option>
+				<option value="4">Otra</option>
+			</select> <br /> 
+			<label>Tarjeta de Credito:</label> <br /> 
+				<input type="radio" name="Tipo de tarjeta" value="Visa" />Visa <br /> 
+				<input type="radio" name="Tipo de tarjeta" value="Master Card" />Master Card <br /> 
+				<input type="radio" name="Tipo de tarjeta" value="Amex" /> American Express <br /> 
+				<input type="radio"	name="Tipo de tarjeta" value="Discover" />Discover <br /> 
+				<input type="radio" name="Tipo de tarjeta" value="Java SmartCard" />Java SmartCard <br /> 
+			<label>Numero de la tarjeta:</label> 
+			<input type="password" name="Numero de Tarjeta" /> <br /> 
+			<label>Repita numero de la tarjeta:</label> 
+			<input type="password" name="Numero de Tarjeta" />
+
+		</fieldset>
+		<input type="submit" value="Enviar Datos" />
+	</form>
+
+</body>
+</html>
+
+
+

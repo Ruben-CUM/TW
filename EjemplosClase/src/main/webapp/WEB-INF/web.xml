@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	id="WebApp_ID" version="5.0">
+	<display-name>EjemplosClase</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<!-- Básicos -->
+	<servlet>
+		<servlet-name>HolaMundo</servlet-name>
+		<servlet-class>es.unex.cum.tw.basico.HolaMundo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Cabeceras</servlet-name>
+		<servlet-class>es.unex.cum.tw.basico.Cabeceras</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetPost</servlet-name>
+		<servlet-class>es.unex.cum.tw.basico.GetPost</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Parametros</servlet-name>
+		<servlet-class>es.unex.cum.tw.basico.Parametros</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShowParameters</servlet-name>
+		<servlet-class>es.unex.cum.tw.basico.ShowParameters</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HolaMundo</servlet-name>
+		<url-pattern>/HolaMundo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetPost</servlet-name>
+		<url-pattern>/GetPost</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Parametros</servlet-name>
+		<url-pattern>/Parametros</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowParameters</servlet-name>
+		<url-pattern>/ShowParameters</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Cabeceras</servlet-name>
+		<url-pattern>/Cabeceras</url-pattern>
+	</servlet-mapping>
+
+	<!-- Contexto -->
+	<!-- Parámetros en el servlet -->
+	<servlet>
+		<description></description>
+		<display-name>Autenticacion</display-name>
+		<servlet-name>Autenticacion</servlet-name>
+		<servlet-class>es.unex.cum.tw.contexto.Autenticacion</servlet-class>
+		<init-param>
+			<param-name>usuario</param-name>
+			<param-value>administrador</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>prueba</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Autenticacion</servlet-name>
+		<url-pattern>/Autenticacion</url-pattern>
+	</servlet-mapping>
+	<!-- Parámetros en el contexto. @WebServlet("/AutenticacionContext") -->
+	<context-param>
+		<param-name>usuarioContext</param-name>
+		<param-value>administrador</param-value>
+	</context-param>
+	<context-param>
+		<param-name>passwordContext</param-name>
+		<param-value>prueba</param-value>
+	</context-param>
+
+
+	<!-- Ficheros de propiedades -->
+	<servlet>
+		<servlet-name>AutenticacionFicheros</servlet-name>
+		<servlet-class>es.unex.cum.tw.contexto.AutenticacionFicheros</servlet-class>
+		<!-- Como servlet -->
+		<init-param>
+			<param-name>ficheroUsuarios</param-name>
+			<param-value>WEB-INF/ficheroUsuarios.prop</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AutenticacionFicheros</servlet-name>
+		<url-pattern>/AutenticacionFicheros</url-pattern>
+	</servlet-mapping>
+	<!-- Como contexto -->
+	<!-- <context-param> 
+		<param-name>ficheroUsuarios</param-name> 
+		<param-value>WEB-INF/ficheroUsuarios.prop</param-value> 
+	</context-param> -->
+</web-app>

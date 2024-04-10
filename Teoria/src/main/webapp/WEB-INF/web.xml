@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	version="6.0">
+	<servlet>
+		<description></description>
+		<display-name>Ejemplo</display-name>
+		<servlet-name>Ejemplo</servlet-name>
+		<servlet-class>es.unex.cum.tw.Ejemplo</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Autenticacion</servlet-name>
+		<servlet-class>es.unex.cum.tw.Autenticacion</servlet-class>
+		<init-param>
+			<param-name>usuario</param-name>
+			<param-value>administrador</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>prueba</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Autenticacion</servlet-name>
+		<url-pattern>/Auth</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Ejemplo</servlet-name>
+		<url-pattern>/Ejemplo</url-pattern>
+	</servlet-mapping>
+	<display-name>Teoria</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+</web-app>
